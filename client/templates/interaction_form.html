@@ -1,0 +1,40 @@
+<template name="interaction_form">
+  <div class="container mt-3">
+    <h2>Add Interaction</h2>
+    <form id="interaction-form" class="form">
+      <div class="mb-3">
+        <label for="author1" class="form-label">Author 1:</label>
+        <input type="text" class="form-control" id="author1" name="author1" required>
+      </div>
+      <div class="mb-3">
+        <label for="author2" class="form-label">Author 2 (optional):</label>
+        <input type="text" class="form-control" id="author2" name="author2">
+      </div>
+      <div class="mb-3">
+        <label for="author3" class="form-label">Author 3 (optional):</label>
+        <input type="text" class="form-control" id="author3" name="author3">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="case" class="form-label">Case:</label>
+        <select class="form-select" id="case" name="case" required>
+          {{#each cases}}
+            <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description of the situation:</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</template>

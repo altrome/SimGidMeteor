@@ -1,0 +1,22 @@
+<head>
+  <title>Case Management System</title>
+  <link rel="stylesheet" href="/client/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/client/stylesheets/style.css">
+</head>
+
+<body>
+  <div id="main-container" class="container">
+    {{> login}}
+    {{> register}}
+    {{#if currentUser}}
+      {{> navbar}}
+      {{> dashboard}}
+      {{> admin_panel}}
+      {{> case_form}}
+      {{> situation_form}}
+      {{> interaction_form}}
+    {{/if}}
+  </div>
+
+  <script src="/client/main.js"></script>
+</body>

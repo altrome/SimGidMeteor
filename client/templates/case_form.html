@@ -1,0 +1,40 @@
+<template name="case_form">
+  <div class="container mt-3">
+    <h2>Case Profile</h2>
+    <form id="case-form" class="form">
+      <div class="mb-3">
+        <label for="author1" class="form-label">Author 1</label>
+        <input type="text" class="form-control" id="author1" name="author1" required>
+      </div>
+      <div class="mb-3">
+        <label for="author2" class="form-label">Author 2 (Optional)</label>
+        <input type="text" class="form-control" id="author2" name="author2">
+      </div>
+      <div class="mb-3">
+        <label for="author3" class="form-label">Author 3 (Optional)</label>
+        <input type="text" class="form-control" id="author3" name="author3">
+      </div>
+      <div class="mb-3">
+        <label for="nameSurname" class="form-label">Name and Surname</label>
+        <input type="text" class="form-control" id="nameSurname" name="nameSurname" required>
+      </div>
+      <div class="mb-3">
+        <label for="dateOfBirth" class="form-label">Date of Birth (DD-MM-YYYY)</label>
+        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+      </div>
+      <div class="mb-3">
+        <label for="physicalDescription" class="form-label">Physical Description</label>
+        <textarea class="form-control" id="physicalDescription" name="physicalDescription" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="biologicalSex" class="form-label">Biological Sex</label>
+        <select class="form-select" id="biologicalSex" name="biologicalSex" required>
+          <option value="">Select...</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</template>

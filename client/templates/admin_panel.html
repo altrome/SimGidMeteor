@@ -1,0 +1,60 @@
+<template name="admin_panel">
+  <div class="container mt-3">
+    <h1>Admin Panel</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Manage Users</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">User ID</th>
+              <th scope="col">Email</th>
+              <th scope="col">Roles</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each users}}
+              <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.emails.[0].address}}</td>
+                <td>
+                  {{#each this.roles}}
+                    <span class="badge bg-secondary">{{this}}</span>
+                  {{/each}}
+                </td>
+                <td>
+                  <button class="btn btn-primary btn-sm" id="edit-roles-{{this._id}}">Edit Roles</button>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Assign Reviewer</h2>
+        <form id="assign-reviewer-form">
+          <div class="mb-3">
+            <label for="user-select" class="form-label">Select User:</label>
+            <select id="user-select" class="form-select">
+              {{#each users}}
+                <option value="{{this._id}}">{{this.emails.[0].address}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="case-select" class="form-label">Select Case:</label>
+            <select id="case-select" class="form-select">
+              {{#each cases}}
+                <option value="{{this._id}}">{{this.name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Assign as Reviewer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

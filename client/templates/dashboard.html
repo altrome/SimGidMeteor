@@ -1,0 +1,35 @@
+<template name="dashboard">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Dashboard</h1>
+        <div id="search-filter-section" class="mb-3">
+          <input type="text" id="search-case" class="form-control mb-2" placeholder="Search by case name...">
+          <input type="date" id="filter-date" class="form-control mb-2">
+          <select id="filter-tag" class="form-select mb-2">
+            <option value="">Filter by tag...</option>
+            <!-- Options will be populated dynamically -->
+          </select>
+          <button class="btn btn-primary" id="search-filter-button">Apply Filters</button>
+        </div>
+        <div id="case-cards-container">
+          {{#each cases}}
+            <div id="case-card-{{_id}}" class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">{{nameSurname}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">DOB: {{dateOfBirth}}</h6>
+                <p class="card-text">{{physicalDescription}}</p>
+                <a href="/case/{{_id}}" class="btn btn-primary">View Case</a>
+                {{#if isReviewer}}
+                  <a href="/edit/case/{{_id}}" class="btn btn-secondary">Edit Case</a>
+                {{/if}}
+              </div>
+            </div>
+          {{else}}
+            <p>No cases found.</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

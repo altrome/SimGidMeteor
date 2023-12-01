@@ -1,0 +1,24 @@
+{
+  "name": "case-management-system",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-watch": "meteor test --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.4.1"
+  },
+  "devDependencies": {
+    "meteortesting:mocha": "^2.0.1",
+    "chai": "^4.2.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}

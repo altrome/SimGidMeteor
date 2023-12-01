@@ -1,0 +1,25 @@
+<template name="case_card">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{nameAndSurname}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">DOB: {{dateFormat dateOfBirth}}</h6>
+      <p class="card-text">{{physicalDescription}}</p>
+      <p class="card-text"><strong>Sex:</strong> {{biologicalSex}}</p>
+      <p class="card-text">
+        <strong>Authors:</strong>
+        {{#if author1}}{{author1}}{{/if}}
+        {{#if author2}}, {{author2}}{{/if}}
+        {{#if author3}}, {{author3}}{{/if}}
+      </p>
+      <a href="#" class="btn btn-primary" id="edit-case-{{_id}}">Edit Case</a>
+    </div>
+  </div>
+</template>
+
+<template name="dateFormat">
+  {{#if dateOfBirth}}
+    {{moment dateOfBirth format="DD-MM-YYYY"}}
+  {{else}}
+    Unknown
+  {{/if}}
+</template>

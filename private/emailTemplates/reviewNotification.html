@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Case Review Notification</title>
+  <style>
+    .email-container {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .header {
+      background-color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+    }
+    .content {
+      padding: 20px;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <h1>Case Review Notification</h1>
+    </div>
+    <div class="content">
+      <p>Hello {{ reviewerName }},</p>
+      <p>A new case has been submitted and is awaiting your review.</p>
+      <p><strong>Case Title:</strong> {{ caseTitle }}</p>
+      <p><strong>Submitted by:</strong> {{ caseAuthor }}</p>
+      <p><strong>Date:</strong> {{ submissionDate }}</p>
+      <p>To review the case, please log in to the application and visit the dashboard.</p>
+      <p><a href="{{ dashboardUrl }}" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Go to Dashboard</a></p>
+    </div>
+    <div class="footer">
+      <p>This is an automated message, please do not reply directly to this email.</p>
+    </div>
+  </div>
+</body>
+</html>

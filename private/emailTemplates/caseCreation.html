@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Case Created</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f6f6f6;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .email-header {
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+    .email-content {
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .email-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8em;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <h1>New Case Created</h1>
+    </div>
+    <div class="email-content">
+      <p>Hello,</p>
+      <p>A new case has been created in the system. Here are the details:</p>
+      <p><strong>Case Title:</strong> {{caseTitle}}</p>
+      <p><strong>Author:</strong> {{author}}</p>
+      <p><strong>Date of Birth:</strong> {{dateOfBirth}}</p>
+      <p><strong>Physical Description:</strong> {{physicalDescription}}</p>
+      <p><strong>Biological Sex:</strong> {{biologicalSex}}</p>
+      <p>Please review the case at your earliest convenience.</p>
+      <p>Thank you,</p>
+      <p>The Case Management Team</p>
+    </div>
+    <div class="email-footer">
+      <p>This is an automated message, please do not reply directly to this email.</p>
+    </div>
+  </div>
+</body>
+</html>
